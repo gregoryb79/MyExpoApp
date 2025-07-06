@@ -2,6 +2,7 @@ import { StyleSheet, TouchableOpacity, Alert, Platform } from 'react-native';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
+import { router } from 'expo-router';
 
 export default function TabOneScreen() {
   const handleButtonPress = () => {
@@ -19,6 +20,9 @@ export default function TabOneScreen() {
       <Text style={styles.title}>Tab One - Check</Text>
       <TouchableOpacity style={styles.button} onPress={handleButtonPress}>
         <Text style={styles.buttonText}>Test Button</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={()=>router.push('/two')}>
+        <Text style={styles.buttonText}>Tab Two</Text>
       </TouchableOpacity>
        
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
